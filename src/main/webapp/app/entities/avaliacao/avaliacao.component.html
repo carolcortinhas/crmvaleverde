@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="crmvaleverdeApp.avaliacao.home.title">Avaliacaos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-avaliacao" [routerLink]="['/avaliacao/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="crmvaleverdeApp.avaliacao.home.createLabel">
+            Create a new Avaliacao
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="avaliacaos?.length === 0">
+        <span jhiTranslate="crmvaleverdeApp.avaliacao.home.notFound">No avaliacaos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="avaliacaos && avaliacaos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.avaliacao.nivelSatisfacao">Nivel Satisfacao</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.avaliacao.descricao">Descricao</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.avaliacao.avaliacaoProduto">Avaliacao Produto</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.avaliacao.avaliacaoAtendimento">Avaliacao Atendimento</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.avaliacao.clientesAvaliacoes">Clientes Avaliacoes</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let avaliacao of avaliacaos ;trackBy: trackId">
+                    <td><a [routerLink]="['/avaliacao', avaliacao.id, 'view']">{{ avaliacao.id }}</a></td>
+                    <td>{{ avaliacao.nivelSatisfacao }}</td>
+                    <td>{{ avaliacao.descricao }}</td>
+                    <td>
+                        <div *ngIf="avaliacao.avaliacaoProduto">
+                            <a [routerLink]="['/avaliacao-produto', avaliacao.avaliacaoProduto?.id, 'view']" >{{ avaliacao.avaliacaoProduto?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="avaliacao.avaliacaoAtendimento">
+                            <a [routerLink]="['/avaliacao-atendimento', avaliacao.avaliacaoAtendimento?.id, 'view']" >{{ avaliacao.avaliacaoAtendimento?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="avaliacao.clientesAvaliacoes">
+                            <a [routerLink]="['/cliente', avaliacao.clientesAvaliacoes?.id, 'view']" >{{ avaliacao.clientesAvaliacoes?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/avaliacao', avaliacao.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/avaliacao', avaliacao.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(avaliacao)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

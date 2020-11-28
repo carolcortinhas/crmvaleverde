@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity RepresentantePJ.
+    -->
+    <changeSet id="20201128135258-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="representa_id"
+                                 baseTableName="representante_pj"
+                                 constraintName="fk_representante_pj_representa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cliente_pessoa_juridica"/>
+
+        <addForeignKeyConstraint baseColumnNames="pessoa_juridica_id"
+                                 baseTableName="representante_pj"
+                                 constraintName="fk_representante_pj_pessoa_juridica_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pessoa"/>
+
+    </changeSet>
+</databaseChangeLog>

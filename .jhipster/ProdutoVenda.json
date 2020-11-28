@@ -1,0 +1,36 @@
+{
+  "name": "ProdutoVenda",
+  "fields": [
+    {
+      "fieldName": "quantidade",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "produto",
+      "otherEntityRelationshipName": "produtosVenda2",
+      "relationshipName": "produto",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "venda",
+      "otherEntityRelationshipName": "produtosVenda3",
+      "relationshipName": "vendasProdutos",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128140058",
+  "entityTableName": "produto_venda",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,25 @@
+{
+  "crmvaleverdeApp": {
+    "etapaAtendimento": {
+      "home": {
+        "title": "Etapa Atendimentos",
+        "createLabel": "Criar novo Etapa Atendimento",
+        "createOrEditLabel": "Criar ou editar Etapa Atendimento",
+        "notFound": "Nenhum Etapa Atendimento encontrado"
+      },
+      "created": "Um novo Etapa Atendimento foi criado com o identificador {{ param }}",
+      "updated": "Um Etapa Atendimento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Etapa Atendimento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Etapa Atendimento {{ id }}?"
+      },
+      "detail": {
+        "title": "Etapa Atendimento"
+      },
+      "data": "Data",
+      "descricao": "Descricao",
+      "situacao": "Situacao",
+      "atendimento": "Atendimento"
+    }
+  }
+}

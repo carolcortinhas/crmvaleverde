@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-cliente-heading" jhiTranslate="crmvaleverdeApp.cliente.home.createOrEditLabel">Create or edit a Cliente</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.cliente.nivelSatisfacao" for="field_nivelSatisfacao">Nivel Satisfacao</label>
+                    <input type="text" class="form-control" name="nivelSatisfacao" id="field_nivelSatisfacao"
+                           formControlName="nivelSatisfacao"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.cliente.origem" for="field_origem">Origem</label>
+                    <select class="form-control" name="origem" formControlName="origem" id="field_origem">
+                        <option value="EMAIL">{{ 'crmvaleverdeApp.Origem.EMAIL' | translate }}</option>
+                        <option value="EVENTO">{{ 'crmvaleverdeApp.Origem.EVENTO' | translate }}</option>
+                        <option value="FACEBOOK">{{ 'crmvaleverdeApp.Origem.FACEBOOK' | translate }}</option>
+                        <option value="INSTAGRAM">{{ 'crmvaleverdeApp.Origem.INSTAGRAM' | translate }}</option>
+                        <option value="NEWSLETTER">{{ 'crmvaleverdeApp.Origem.NEWSLETTER' | translate }}</option>
+                        <option value="WHATSAPP">{{ 'crmvaleverdeApp.Origem.WHATSAPP' | translate }}</option>
+                        <option value="TELEFONE">{{ 'crmvaleverdeApp.Origem.TELEFONE' | translate }}</option>
+                        <option value="CHATSITE">{{ 'crmvaleverdeApp.Origem.CHATSITE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.cliente.categoria" for="field_categoria">Categoria</label>
+                    <select class="form-control" name="categoria" formControlName="categoria" id="field_categoria">
+                        <option value="CLIENTEEFETIVO">{{ 'crmvaleverdeApp.Categoria.CLIENTEEFETIVO' | translate }}</option>
+                        <option value="CONCORRENTE">{{ 'crmvaleverdeApp.Categoria.CONCORRENTE' | translate }}</option>
+                        <option value="CLIENTEPOTENCIAL">{{ 'crmvaleverdeApp.Categoria.CLIENTEPOTENCIAL' | translate }}</option>
+                        <option value="FORNECEDOR">{{ 'crmvaleverdeApp.Categoria.FORNECEDOR' | translate }}</option>
+                        <option value="LEAD">{{ 'crmvaleverdeApp.Categoria.LEAD' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.cliente.clientePessoaJuridica" for="field_clientePessoaJuridica">Cliente Pessoa Juridica</label>
+                    <select class="form-control" id="field_clientePessoaJuridica" name="clientePessoaJuridica" formControlName="clientePessoaJuridica">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientePessoaJuridicaOption.id === editForm.get('clientePessoaJuridica')!.value?.id ? editForm.get('clientePessoaJuridica')!.value : clientePessoaJuridicaOption" *ngFor="let clientePessoaJuridicaOption of clientepessoajuridicas; trackBy: trackById">{{ clientePessoaJuridicaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.cliente.clientePessoaFisica" for="field_clientePessoaFisica">Cliente Pessoa Fisica</label>
+                    <select class="form-control" id="field_clientePessoaFisica" name="clientePessoaFisica" formControlName="clientePessoaFisica">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientePessoaFisicaOption.id === editForm.get('clientePessoaFisica')!.value?.id ? editForm.get('clientePessoaFisica')!.value : clientePessoaFisicaOption" *ngFor="let clientePessoaFisicaOption of clientepessoafisicas; trackBy: trackById">{{ clientePessoaFisicaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.cliente.consultor" for="field_consultor">Consultor</label>
+                    <select class="form-control" id="field_consultor" name="consultor" formControlName="consultor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="consultorOption.id === editForm.get('consultor')!.value?.id ? editForm.get('consultor')!.value : consultorOption" *ngFor="let consultorOption of consultors; trackBy: trackById">{{ consultorOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "crmvaleverdeApp": {
+    "avaliacaoAtendimento": {
+      "home": {
+        "title": "Avaliacao Atendimentos",
+        "createLabel": "Create a new Avaliacao Atendimento",
+        "createOrEditLabel": "Create or edit a Avaliacao Atendimento",
+        "notFound": "No Avaliacao Atendimentos found"
+      },
+      "created": "A new Avaliacao Atendimento is created with identifier {{ param }}",
+      "updated": "A Avaliacao Atendimento is updated with identifier {{ param }}",
+      "deleted": "A Avaliacao Atendimento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Avaliacao Atendimento {{ id }}?"
+      },
+      "detail": {
+        "title": "Avaliacao Atendimento"
+      },
+      "avaliacao": "Avaliacao"
+    }
+  }
+}

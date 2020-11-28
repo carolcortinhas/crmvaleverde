@@ -1,0 +1,26 @@
+{
+  "crmvaleverdeApp": {
+    "avaliacao": {
+      "home": {
+        "title": "Avaliacaos",
+        "createLabel": "Criar novo Avaliacao",
+        "createOrEditLabel": "Criar ou editar Avaliacao",
+        "notFound": "Nenhum Avaliacao encontrado"
+      },
+      "created": "Um novo Avaliacao foi criado com o identificador {{ param }}",
+      "updated": "Um Avaliacao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Avaliacao foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Avaliacao {{ id }}?"
+      },
+      "detail": {
+        "title": "Avaliacao"
+      },
+      "nivelSatisfacao": "Nivel Satisfacao",
+      "descricao": "Descricao",
+      "avaliacaoProduto": "Avaliacao Produto",
+      "avaliacaoAtendimento": "Avaliacao Atendimento",
+      "clientesAvaliacoes": "Clientes Avaliacoes"
+    }
+  }
+}

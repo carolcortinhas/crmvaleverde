@@ -1,0 +1,24 @@
+{
+  "name": "AvaliacaoProduto",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "avaliacao",
+      "otherEntityRelationshipName": "avaliacaoProduto",
+      "relationshipName": "avaliacao",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201128135858",
+  "entityTableName": "avaliacao_produto",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

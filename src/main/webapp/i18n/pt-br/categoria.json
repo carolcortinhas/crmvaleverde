@@ -1,0 +1,12 @@
+{
+  "crmvaleverdeApp": {
+    "Categoria": {
+      "null": "",
+      "CLIENTEEFETIVO": "CLIENTEEFETIVO",
+      "CONCORRENTE": "CONCORRENTE",
+      "CLIENTEPOTENCIAL": "CLIENTEPOTENCIAL",
+      "FORNECEDOR": "FORNECEDOR",
+      "LEAD": "LEAD"
+    }
+  }
+}

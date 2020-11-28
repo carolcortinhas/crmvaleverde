@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contato">
+            <h2><span jhiTranslate="crmvaleverdeApp.contato.detail.title">Contato</span> {{ contato.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.contato.telefone">Telefone</span></dt>
+                <dd>
+                    <div *ngIf="contato.telefone">
+                        <a [routerLink]="['/telefone', contato.telefone?.id, 'view']">{{ contato.telefone?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.contato.email">Email</span></dt>
+                <dd>
+                    <div *ngIf="contato.email">
+                        <a [routerLink]="['/email', contato.email?.id, 'view']">{{ contato.email?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.contato.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="contato.endereco">
+                        <a [routerLink]="['/endereco', contato.endereco?.id, 'view']">{{ contato.endereco?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contato', contato.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

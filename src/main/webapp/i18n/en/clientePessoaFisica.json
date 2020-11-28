@@ -1,0 +1,24 @@
+{
+  "crmvaleverdeApp": {
+    "clientePessoaFisica": {
+      "home": {
+        "title": "Cliente Pessoa Fisicas",
+        "createLabel": "Create a new Cliente Pessoa Fisica",
+        "createOrEditLabel": "Create or edit a Cliente Pessoa Fisica",
+        "notFound": "No Cliente Pessoa Fisicas found"
+      },
+      "created": "A new Cliente Pessoa Fisica is created with identifier {{ param }}",
+      "updated": "A Cliente Pessoa Fisica is updated with identifier {{ param }}",
+      "deleted": "A Cliente Pessoa Fisica is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cliente Pessoa Fisica {{ id }}?"
+      },
+      "detail": {
+        "title": "Cliente Pessoa Fisica"
+      },
+      "nome": "Nome",
+      "pessoas": "Pessoas",
+      "clientePF": "Cliente PF"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="representantePJ">
+            <h2><span jhiTranslate="crmvaleverdeApp.representantePJ.detail.title">Representante PJ</span> {{ representantePJ.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.representantePJ.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ representantePJ.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.representantePJ.representa">Representa</span></dt>
+                <dd>
+                    <div *ngIf="representantePJ.representa">
+                        <a [routerLink]="['/cliente-pessoa-juridica', representantePJ.representa?.id, 'view']">{{ representantePJ.representa?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.representantePJ.pessoaJuridica">Pessoa Juridica</span></dt>
+                <dd>
+                    <div *ngIf="representantePJ.pessoaJuridica">
+                        <a [routerLink]="['/pessoa', representantePJ.pessoaJuridica?.id, 'view']">{{ representantePJ.pessoaJuridica?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/representante-pj', representantePJ.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

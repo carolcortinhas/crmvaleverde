@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="produto">
+            <h2><span jhiTranslate="crmvaleverdeApp.produto.detail.title">Produto</span> {{ produto.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.produto.codProdutoBackoffice">Cod Produto Backoffice</span></dt>
+                <dd>
+                    <span>{{ produto.codProdutoBackoffice }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.produto.valorUnitario">Valor Unitario</span></dt>
+                <dd>
+                    <span>{{ produto.valorUnitario }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.produto.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ produto.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.produto.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ produto.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.produto.vendas1">Vendas 1</span></dt>
+                <dd>
+                    <div *ngIf="produto.vendas1">
+                        <a [routerLink]="['/venda', produto.vendas1?.id, 'view']">{{ produto.vendas1?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/produto', produto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

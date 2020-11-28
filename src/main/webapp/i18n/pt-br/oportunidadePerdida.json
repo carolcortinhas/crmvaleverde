@@ -1,0 +1,24 @@
+{
+  "crmvaleverdeApp": {
+    "oportunidadePerdida": {
+      "home": {
+        "title": "Oportunidade Perdidas",
+        "createLabel": "Criar novo Oportunidade Perdida",
+        "createOrEditLabel": "Criar ou editar Oportunidade Perdida",
+        "notFound": "Nenhum Oportunidade Perdida encontrado"
+      },
+      "created": "Um novo Oportunidade Perdida foi criado com o identificador {{ param }}",
+      "updated": "Um Oportunidade Perdida foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Oportunidade Perdida foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Oportunidade Perdida {{ id }}?"
+      },
+      "detail": {
+        "title": "Oportunidade Perdida"
+      },
+      "descricaoPerda": "Descricao Perda",
+      "date": "Date",
+      "vendaNaoEfetuada": "Venda Nao Efetuada"
+    }
+  }
+}

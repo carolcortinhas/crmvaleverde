@@ -1,0 +1,11 @@
+{
+  "crmvaleverdeApp": {
+    "Tarefa": {
+      "null": "",
+      "EMAIL": "EMAIL",
+      "TELEFONE": "TELEFONE",
+      "REUNIAO": "REUNIAO",
+      "VISITA": "VISITA"
+    }
+  }
+}

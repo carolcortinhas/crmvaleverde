@@ -1,0 +1,56 @@
+{
+  "name": "Venda",
+  "fields": [
+    {
+      "fieldName": "valorDesconto",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "valorTotal",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "diaFechamento",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "produto",
+      "otherEntityRelationshipName": "vendas1",
+      "relationshipName": "produtosVenda1"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "produtoVenda",
+      "otherEntityRelationshipName": "vendasProdutos",
+      "relationshipName": "produtosVenda3"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "consultor",
+      "otherEntityRelationshipName": "vendas",
+      "relationshipName": "consultorVenda",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "oportunidade",
+      "otherEntityRelationshipName": "vendasOportunidades",
+      "relationshipName": "oportunidadeVenda",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128135958",
+  "entityTableName": "venda",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

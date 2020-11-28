@@ -1,0 +1,28 @@
+{
+  "crmvaleverdeApp": {
+    "venda": {
+      "home": {
+        "title": "Vendas",
+        "createLabel": "Create a new Venda",
+        "createOrEditLabel": "Create or edit a Venda",
+        "notFound": "No Vendas found"
+      },
+      "created": "A new Venda is created with identifier {{ param }}",
+      "updated": "A Venda is updated with identifier {{ param }}",
+      "deleted": "A Venda is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Venda {{ id }}?"
+      },
+      "detail": {
+        "title": "Venda"
+      },
+      "valorDesconto": "Valor Desconto",
+      "valorTotal": "Valor Total",
+      "diaFechamento": "Dia Fechamento",
+      "produtosVenda1": "Produtos Venda 1",
+      "produtosVenda3": "Produtos Venda 3",
+      "consultorVenda": "Consultor Venda",
+      "oportunidadeVenda": "Oportunidade Venda"
+    }
+  }
+}

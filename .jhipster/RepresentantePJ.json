@@ -1,0 +1,38 @@
+{
+  "name": "RepresentantePJ",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "clientePessoaJuridica",
+      "otherEntityRelationshipName": "representantePJ",
+      "relationshipName": "representa",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "pessoa",
+      "otherEntityRelationshipName": "representante",
+      "relationshipName": "pessoaJuridica",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201128135258",
+  "entityTableName": "representante_pj",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

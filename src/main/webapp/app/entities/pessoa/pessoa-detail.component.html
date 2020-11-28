@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pessoa">
+            <h2><span jhiTranslate="crmvaleverdeApp.pessoa.detail.title">Pessoa</span> {{ pessoa.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ pessoa.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.sobrenome">Sobrenome</span></dt>
+                <dd>
+                    <span>{{ pessoa.sobrenome }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ pessoa.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.cpf">Cpf</span></dt>
+                <dd>
+                    <span>{{ pessoa.cpf }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.rg">Rg</span></dt>
+                <dd>
+                    <span>{{ pessoa.rg }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.dataNascimento">Data Nascimento</span></dt>
+                <dd>
+                    <span>{{ pessoa.dataNascimento }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.sexo">Sexo</span></dt>
+                <dd>
+                    <span>{{ pessoa.sexo }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.contato">Contato</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.contato">
+                        <a [routerLink]="['/contato', pessoa.contato?.id, 'view']">{{ pessoa.contato?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.endereco">
+                        <a [routerLink]="['/endereco', pessoa.endereco?.id, 'view']">{{ pessoa.endereco?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.funcionario">Funcionario</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.funcionario">
+                        <a [routerLink]="['/funcionario', pessoa.funcionario?.id, 'view']">{{ pessoa.funcionario?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.pessoa.juridica">Juridica</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.juridica">
+                        <a [routerLink]="['/cliente-pessoa-juridica', pessoa.juridica?.id, 'view']">{{ pessoa.juridica?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pessoa', pessoa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

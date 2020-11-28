@@ -1,0 +1,26 @@
+{
+  "crmvaleverdeApp": {
+    "consultor": {
+      "home": {
+        "title": "Consultors",
+        "createLabel": "Criar novo Consultor",
+        "createOrEditLabel": "Criar ou editar Consultor",
+        "notFound": "Nenhum Consultor encontrado"
+      },
+      "created": "Um novo Consultor foi criado com o identificador {{ param }}",
+      "updated": "Um Consultor foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Consultor foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Consultor {{ id }}?"
+      },
+      "detail": {
+        "title": "Consultor"
+      },
+      "nome": "Nome",
+      "atende": "Atende",
+      "vendas": "Vendas",
+      "cadastroFuncionario": "Cadastro Funcionario",
+      "clientesOportunidades": "Clientes Oportunidades"
+    }
+  }
+}

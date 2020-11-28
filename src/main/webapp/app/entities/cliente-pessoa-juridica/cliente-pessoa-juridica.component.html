@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.home.title">Cliente Pessoa Juridicas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cliente-pessoa-juridica" [routerLink]="['/cliente-pessoa-juridica/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.home.createLabel">
+            Create a new Cliente Pessoa Juridica
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="clientePessoaJuridicas?.length === 0">
+        <span jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.home.notFound">No clientePessoaJuridicas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="clientePessoaJuridicas && clientePessoaJuridicas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.cnpj">Cnpj</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.razaoSocial">Razao Social</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let clientePessoaJuridica of clientePessoaJuridicas ;trackBy: trackId">
+                    <td><a [routerLink]="['/cliente-pessoa-juridica', clientePessoaJuridica.id, 'view']">{{ clientePessoaJuridica.id }}</a></td>
+                    <td>{{ clientePessoaJuridica.cnpj }}</td>
+                    <td>{{ clientePessoaJuridica.razaoSocial }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/cliente-pessoa-juridica', clientePessoaJuridica.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/cliente-pessoa-juridica', clientePessoaJuridica.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(clientePessoaJuridica)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

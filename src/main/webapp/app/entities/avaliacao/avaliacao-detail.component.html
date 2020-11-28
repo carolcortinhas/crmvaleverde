@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="avaliacao">
+            <h2><span jhiTranslate="crmvaleverdeApp.avaliacao.detail.title">Avaliacao</span> {{ avaliacao.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.avaliacao.nivelSatisfacao">Nivel Satisfacao</span></dt>
+                <dd>
+                    <span>{{ avaliacao.nivelSatisfacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.avaliacao.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ avaliacao.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.avaliacao.avaliacaoProduto">Avaliacao Produto</span></dt>
+                <dd>
+                    <div *ngIf="avaliacao.avaliacaoProduto">
+                        <a [routerLink]="['/avaliacao-produto', avaliacao.avaliacaoProduto?.id, 'view']">{{ avaliacao.avaliacaoProduto?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.avaliacao.avaliacaoAtendimento">Avaliacao Atendimento</span></dt>
+                <dd>
+                    <div *ngIf="avaliacao.avaliacaoAtendimento">
+                        <a [routerLink]="['/avaliacao-atendimento', avaliacao.avaliacaoAtendimento?.id, 'view']">{{ avaliacao.avaliacaoAtendimento?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.avaliacao.clientesAvaliacoes">Clientes Avaliacoes</span></dt>
+                <dd>
+                    <div *ngIf="avaliacao.clientesAvaliacoes">
+                        <a [routerLink]="['/cliente', avaliacao.clientesAvaliacoes?.id, 'view']">{{ avaliacao.clientesAvaliacoes?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/avaliacao', avaliacao.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

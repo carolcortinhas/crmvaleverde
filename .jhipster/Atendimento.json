@@ -1,0 +1,64 @@
+{
+  "name": "Atendimento",
+  "fields": [
+    {
+      "fieldName": "valorTotal",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "dataInicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dataFim",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "privacidade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tarefa",
+      "fieldType": "Tarefa",
+      "fieldValues": "EMAIL,TELEFONE,REUNIAO,VISITA"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "oportunidade",
+      "otherEntityRelationshipName": "atendimentosOportunidades",
+      "relationshipName": "oportunidadesVendas"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "etapaAtendimento",
+      "otherEntityRelationshipName": "atendimento",
+      "relationshipName": "etapasAtendimento"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "proposta",
+      "otherEntityRelationshipName": "propostaVenda",
+      "relationshipName": "propostas"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "atendimentos",
+      "relationshipName": "clientesAtendidos",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128135458",
+  "entityTableName": "atendimento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

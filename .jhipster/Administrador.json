@@ -1,0 +1,29 @@
+{
+  "name": "Administrador",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "funcionario",
+      "otherEntityRelationshipName": "administradores",
+      "relationshipName": "funcionario1",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128134558",
+  "entityTableName": "administrador",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

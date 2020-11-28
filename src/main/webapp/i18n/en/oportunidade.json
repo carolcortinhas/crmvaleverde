@@ -1,0 +1,27 @@
+{
+  "crmvaleverdeApp": {
+    "oportunidade": {
+      "home": {
+        "title": "Oportunidades",
+        "createLabel": "Create a new Oportunidade",
+        "createOrEditLabel": "Create or edit a Oportunidade",
+        "notFound": "No Oportunidades found"
+      },
+      "created": "A new Oportunidade is created with identifier {{ param }}",
+      "updated": "A Oportunidade is updated with identifier {{ param }}",
+      "deleted": "A Oportunidade is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Oportunidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Oportunidade"
+      },
+      "nomeCliente": "Nome Cliente",
+      "descricao": "Descricao",
+      "data": "Data",
+      "oportunidadePerdida": "Oportunidade Perdida",
+      "vendasOportunidades": "Vendas Oportunidades",
+      "atendimentosOportunidades": "Atendimentos Oportunidades"
+    }
+  }
+}

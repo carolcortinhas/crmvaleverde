@@ -1,0 +1,73 @@
+{
+  "name": "Cliente",
+  "fields": [
+    {
+      "fieldName": "nivelSatisfacao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "origem",
+      "fieldType": "Origem",
+      "fieldValues": "EMAIL,EVENTO,FACEBOOK,INSTAGRAM,NEWSLETTER,WHATSAPP,TELEFONE,CHATSITE"
+    },
+    {
+      "fieldName": "categoria",
+      "fieldType": "Categoria",
+      "fieldValues": "CLIENTEEFETIVO,CONCORRENTE,CLIENTEPOTENCIAL,FORNECEDOR,LEAD"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "clientePessoaJuridica",
+      "otherEntityRelationshipName": "clientePJ",
+      "relationshipName": "clientePessoaJuridica",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "clientePessoaFisica",
+      "otherEntityRelationshipName": "clientePF",
+      "relationshipName": "clientePessoaFisica",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "atendimento",
+      "otherEntityRelationshipName": "clientesAtendidos",
+      "relationshipName": "atendimentos"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "consultor",
+      "otherEntityRelationshipName": "clientesOportunidades",
+      "relationshipName": "consultoresVenda"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "avaliacao",
+      "otherEntityRelationshipName": "clientesAvaliacoes",
+      "relationshipName": "avalia"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "consultor",
+      "otherEntityRelationshipName": "atende",
+      "relationshipName": "consultor",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128134958",
+  "entityTableName": "cliente",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

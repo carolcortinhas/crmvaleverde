@@ -1,0 +1,27 @@
+{
+  "crmvaleverdeApp": {
+    "produto": {
+      "home": {
+        "title": "Produtos",
+        "createLabel": "Create a new Produto",
+        "createOrEditLabel": "Create or edit a Produto",
+        "notFound": "No Produtos found"
+      },
+      "created": "A new Produto is created with identifier {{ param }}",
+      "updated": "A Produto is updated with identifier {{ param }}",
+      "deleted": "A Produto is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Produto {{ id }}?"
+      },
+      "detail": {
+        "title": "Produto"
+      },
+      "codProdutoBackoffice": "Cod Produto Backoffice",
+      "valorUnitario": "Valor Unitario",
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "produtosVenda2": "Produtos Venda 2",
+      "vendas1": "Vendas 1"
+    }
+  }
+}

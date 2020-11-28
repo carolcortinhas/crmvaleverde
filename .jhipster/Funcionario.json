@@ -1,0 +1,55 @@
+{
+  "name": "Funcionario",
+  "fields": [
+    {
+      "fieldName": "codStur",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cargo",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "administrador",
+      "otherEntityRelationshipName": "funcionario1",
+      "relationshipName": "administradores"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "consultor",
+      "otherEntityRelationshipName": "cadastroFuncionario",
+      "relationshipName": "vendedores"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "gerente",
+      "otherEntityRelationshipName": "funcionario3",
+      "relationshipName": "gerentes"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "pessoa",
+      "otherEntityRelationshipName": "funcionario",
+      "relationshipName": "pessoa",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201128134858",
+  "entityTableName": "funcionario",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

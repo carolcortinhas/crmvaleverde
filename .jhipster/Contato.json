@@ -1,0 +1,48 @@
+{
+  "name": "Contato",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "telefone",
+      "otherEntityRelationshipName": "contato",
+      "relationshipName": "telefone",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "email",
+      "otherEntityRelationshipName": "contato",
+      "relationshipName": "email",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "endereco",
+      "otherEntityRelationshipName": "contato",
+      "relationshipName": "endereco",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "pessoa",
+      "otherEntityRelationshipName": "contato",
+      "relationshipName": "pessoa",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201128134258",
+  "entityTableName": "contato",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

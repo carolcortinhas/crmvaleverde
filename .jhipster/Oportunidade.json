@@ -1,0 +1,51 @@
+{
+  "name": "Oportunidade",
+  "fields": [
+    {
+      "fieldName": "nomeCliente",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "oportunidadePerdida",
+      "otherEntityRelationshipName": "vendaNaoEfetuada",
+      "relationshipName": "oportunidadePerdida",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "venda",
+      "otherEntityRelationshipName": "oportunidadeVenda",
+      "relationshipName": "vendasOportunidades"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "atendimento",
+      "otherEntityRelationshipName": "oportunidadesVendas",
+      "relationshipName": "atendimentosOportunidades",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128140458",
+  "entityTableName": "oportunidade",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

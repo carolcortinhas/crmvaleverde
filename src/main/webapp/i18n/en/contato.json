@@ -1,0 +1,25 @@
+{
+  "crmvaleverdeApp": {
+    "contato": {
+      "home": {
+        "title": "Contatoes",
+        "createLabel": "Create a new Contato",
+        "createOrEditLabel": "Create or edit a Contato",
+        "notFound": "No Contatoes found"
+      },
+      "created": "A new Contato is created with identifier {{ param }}",
+      "updated": "A Contato is updated with identifier {{ param }}",
+      "deleted": "A Contato is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Contato {{ id }}?"
+      },
+      "detail": {
+        "title": "Contato"
+      },
+      "telefone": "Telefone",
+      "email": "Email",
+      "endereco": "Endereco",
+      "pessoa": "Pessoa"
+    }
+  }
+}

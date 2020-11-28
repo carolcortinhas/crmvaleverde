@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="atendimento">
+            <h2><span jhiTranslate="crmvaleverdeApp.atendimento.detail.title">Atendimento</span> {{ atendimento.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.atendimento.valorTotal">Valor Total</span></dt>
+                <dd>
+                    <span>{{ atendimento.valorTotal }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.atendimento.dataInicio">Data Inicio</span></dt>
+                <dd>
+                    <span>{{ atendimento.dataInicio }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.atendimento.dataFim">Data Fim</span></dt>
+                <dd>
+                    <span>{{ atendimento.dataFim }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.atendimento.privacidade">Privacidade</span></dt>
+                <dd>
+                    <span>{{ atendimento.privacidade }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.atendimento.tarefa">Tarefa</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'crmvaleverdeApp.Tarefa.' + atendimento.tarefa }}">{{ atendimento.tarefa }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.atendimento.clientesAtendidos">Clientes Atendidos</span></dt>
+                <dd>
+                    <div *ngIf="atendimento.clientesAtendidos">
+                        <a [routerLink]="['/cliente', atendimento.clientesAtendidos?.id, 'view']">{{ atendimento.clientesAtendidos?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/atendimento', atendimento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

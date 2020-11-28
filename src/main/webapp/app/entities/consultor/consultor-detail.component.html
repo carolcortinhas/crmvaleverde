@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="consultor">
+            <h2><span jhiTranslate="crmvaleverdeApp.consultor.detail.title">Consultor</span> {{ consultor.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.consultor.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ consultor.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.consultor.cadastroFuncionario">Cadastro Funcionario</span></dt>
+                <dd>
+                    <div *ngIf="consultor.cadastroFuncionario">
+                        <a [routerLink]="['/funcionario', consultor.cadastroFuncionario?.id, 'view']">{{ consultor.cadastroFuncionario?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.consultor.clientesOportunidades">Clientes Oportunidades</span></dt>
+                <dd>
+                    <div *ngIf="consultor.clientesOportunidades">
+                        <a [routerLink]="['/cliente', consultor.clientesOportunidades?.id, 'view']">{{ consultor.clientesOportunidades?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/consultor', consultor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

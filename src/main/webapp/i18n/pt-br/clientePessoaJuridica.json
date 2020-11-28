@@ -1,0 +1,24 @@
+{
+  "crmvaleverdeApp": {
+    "clientePessoaJuridica": {
+      "home": {
+        "title": "Cliente Pessoa Juridicas",
+        "createLabel": "Criar novo Cliente Pessoa Juridica",
+        "createOrEditLabel": "Criar ou editar Cliente Pessoa Juridica",
+        "notFound": "Nenhum Cliente Pessoa Juridica encontrado"
+      },
+      "created": "Um novo Cliente Pessoa Juridica foi criado com o identificador {{ param }}",
+      "updated": "Um Cliente Pessoa Juridica foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Cliente Pessoa Juridica foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Cliente Pessoa Juridica {{ id }}?"
+      },
+      "detail": {
+        "title": "Cliente Pessoa Juridica"
+      },
+      "cnpj": "Cnpj",
+      "razaoSocial": "Razao Social",
+      "clientePJ": "Cliente PJ"
+    }
+  }
+}

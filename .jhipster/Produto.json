@@ -1,0 +1,47 @@
+{
+  "name": "Produto",
+  "fields": [
+    {
+      "fieldName": "codProdutoBackoffice",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "valorUnitario",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "produtoVenda",
+      "otherEntityRelationshipName": "produto",
+      "relationshipName": "produtosVenda2"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "venda",
+      "otherEntityRelationshipName": "produtosVenda1",
+      "relationshipName": "vendas1",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128140158",
+  "entityTableName": "produto",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

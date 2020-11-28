@@ -1,0 +1,61 @@
+{
+  "name": "Endereco",
+  "fields": [
+    {
+      "fieldName": "logradouro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cidade",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bairro",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cep",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "complemento",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "Estado",
+      "fieldValues": "RO,AC,AM,RR,PA,AP,TO,MA,PI,CE,RN,PB,PE,AL,SE,BA,MG,ES,RJ,SP,PR,SC,RS,MS,MT,GO,DF"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contato",
+      "otherEntityRelationshipName": "endereco",
+      "relationshipName": "contato",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "pessoa",
+      "otherEntityRelationshipName": "endereco",
+      "relationshipName": "pessoa",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201128135358",
+  "entityTableName": "endereco",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,17 @@
+export const enum Origem {
+  EMAIL = 'EMAIL',
+
+  EVENTO = 'EVENTO',
+
+  FACEBOOK = 'FACEBOOK',
+
+  INSTAGRAM = 'INSTAGRAM',
+
+  NEWSLETTER = 'NEWSLETTER',
+
+  WHATSAPP = 'WHATSAPP',
+
+  TELEFONE = 'TELEFONE',
+
+  CHATSITE = 'CHATSITE',
+}

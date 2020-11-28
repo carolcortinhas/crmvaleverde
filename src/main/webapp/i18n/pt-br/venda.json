@@ -1,0 +1,28 @@
+{
+  "crmvaleverdeApp": {
+    "venda": {
+      "home": {
+        "title": "Vendas",
+        "createLabel": "Criar novo Venda",
+        "createOrEditLabel": "Criar ou editar Venda",
+        "notFound": "Nenhum Venda encontrado"
+      },
+      "created": "Um novo Venda foi criado com o identificador {{ param }}",
+      "updated": "Um Venda foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Venda foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Venda {{ id }}?"
+      },
+      "detail": {
+        "title": "Venda"
+      },
+      "valorDesconto": "Valor Desconto",
+      "valorTotal": "Valor Total",
+      "diaFechamento": "Dia Fechamento",
+      "produtosVenda1": "Produtos Venda 1",
+      "produtosVenda3": "Produtos Venda 3",
+      "consultorVenda": "Consultor Venda",
+      "oportunidadeVenda": "Oportunidade Venda"
+    }
+  }
+}

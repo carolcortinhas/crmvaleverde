@@ -1,0 +1,30 @@
+{
+  "crmvaleverdeApp": {
+    "atendimento": {
+      "home": {
+        "title": "Atendimentos",
+        "createLabel": "Create a new Atendimento",
+        "createOrEditLabel": "Create or edit a Atendimento",
+        "notFound": "No Atendimentos found"
+      },
+      "created": "A new Atendimento is created with identifier {{ param }}",
+      "updated": "A Atendimento is updated with identifier {{ param }}",
+      "deleted": "A Atendimento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Atendimento {{ id }}?"
+      },
+      "detail": {
+        "title": "Atendimento"
+      },
+      "valorTotal": "Valor Total",
+      "dataInicio": "Data Inicio",
+      "dataFim": "Data Fim",
+      "privacidade": "Privacidade",
+      "tarefa": "Tarefa",
+      "oportunidadesVendas": "Oportunidades Vendas",
+      "etapasAtendimento": "Etapas Atendimento",
+      "propostas": "Propostas",
+      "clientesAtendidos": "Clientes Atendidos"
+    }
+  }
+}

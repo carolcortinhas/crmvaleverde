@@ -1,0 +1,24 @@
+{
+  "crmvaleverdeApp": {
+    "representantePJ": {
+      "home": {
+        "title": "Representante PJS",
+        "createLabel": "Create a new Representante PJ",
+        "createOrEditLabel": "Create or edit a Representante PJ",
+        "notFound": "No Representante PJS found"
+      },
+      "created": "A new Representante PJ is created with identifier {{ param }}",
+      "updated": "A Representante PJ is updated with identifier {{ param }}",
+      "deleted": "A Representante PJ is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Representante PJ {{ id }}?"
+      },
+      "detail": {
+        "title": "Representante PJ"
+      },
+      "nome": "Nome",
+      "representa": "Representa",
+      "pessoaJuridica": "Pessoa Juridica"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+entity Pessoa {
+	nome String required
+    sobrenome String required
+    descricao String required
+    cpf String required
+    rg String required
+    dataNascimento LocalDate required
+    sexo String
+}
+
+entity Contato {
+}
+
+entity Telefone {
+	codArea Integer
+    numero Integer
+    whatsApp Boolean
+}
+
+entity Email{
+	enderecoEmail String required
+}
+
+entity Administrador {
+	nome String
+}
+
+entity Consultor {
+ 	nome String
+}
+
+entity Gerente {
+	nome String
+}
+
+entity Funcionario{
+	codStur Integer
+    nome String
+    cargo String
+}
+
+entity Cliente{
+    nivelSatisfacao String
+    origem Origem
+    categoria Categoria
+}
+
+enum Origem {
+	ATIVO, INATIVO
+}
+enum Origem {
+	EMAIL, EVENTO, FACEBOOK, INSTAGRAM, NEWSLETTER, WHATSAPP, TELEFONE, CHATSITE
+}
+enum Categoria {
+	CLIENTEEFETIVO, CONCORRENTE, CLIENTEPOTENCIAL, FORNECEDOR, LEAD
+}
+
+entity ClientePessoaFisica{
+	nome String
+}
+
+entity ClientePessoaJuridica{
+	cnpj Integer
+    razaoSocial String
+}
+
+entity RepresentantePJ{
+	nome String
+}
+
+entity Endereco {
+	logradouro String
+	cidade String
+    bairro String
+	cep String
+    numero Integer
+	complemento String
+    estado Estado
+}
+enum Estado {
+	RO
+    AC
+    AM
+    RR
+    PA
+    AP
+    TO
+    MA
+    PI
+    CE
+    RN
+    PB
+    PE
+    AL
+    SE
+    BA
+    MG
+    ES
+    RJ
+    SP
+    PR
+    SC
+    RS
+    MS
+    MT
+    GO
+    DF
+}
+
+entity Atendimento {	
+	valorTotal Long
+	dataInicio Instant
+	dataFim Instant
+	privacidade String
+    tarefa Tarefa
+}
+enum Tarefa {
+	EMAIL, TELEFONE, REUNIAO, VISITA
+}
+
+entity EtapaAtendimento{
+	data LocalDate
+    descricao String
+    situacao Situacao
+}
+enum Situacao {
+	CONTATO, COTACAO, FOLLOWUP, VENDA, POSVENDA
+}
+
+entity Avaliacao {
+    nivelSatisfacao String required
+    descricao String
+}
+
+entity AvaliacaoAtendimento {
+
+}
+
+entity AvaliacaoProduto {
+
+}
+
+entity Venda {
+    valorDesconto Long
+    valorTotal Long
+    diaFechamento Instant
+}
+
+entity ProdutoVenda{
+	quantidade Integer
+}
+
+entity Produto {
+	codProdutoBackoffice Integer
+    valorUnitario Float
+    nome String
+    descricao String
+}
+
+entity Proposta{
+	numero Integer
+    data LocalDate
+}
+
+entity Documento{
+	nomeArquivo String
+}
+
+entity Oportunidade {
+    nomeCliente String
+    descricao String
+    data LocalDate
+}
+
+entity OportunidadePerdida {
+	descricaoPerda String
+    date LocalDate
+}
+relationship OneToOne {
+	Pessoa to Contato
+    Contato to Telefone
+    Contato to Email
+    Contato to Endereco
+    Pessoa to Endereco
+    Pessoa to Funcionario
+    Pessoa {juridica} to ClientePessoaJuridica
+    Cliente {clientePessoaJuridica} to ClientePessoaJuridica {ClientePJ}
+    Cliente {clientePessoaFisica} to ClientePessoaFisica {clientePF}
+    RepresentantePJ {representa} to ClientePessoaJuridica
+    RepresentantePJ {PessoaJuridica} to Pessoa {representante}
+    ClientePessoaFisica {pessoas} to Pessoa
+    Avaliacao to AvaliacaoProduto
+    Avaliacao to AvaliacaoAtendimento
+    Oportunidade {oportunidadePerdida} to OportunidadePerdida {vendaNaoEfetuada}
+    
+}
+
+relationship OneToMany {
+	Funcionario {administradores} to Administrador {funcionario1}
+    Funcionario {vendedores} to Consultor {cadastroFuncionario}
+    Funcionario {gerentes} to Gerente {funcionario3}
+	Consultor {atende} to Cliente {consultor}
+    Consultor {vendas} to Venda {consultorVenda}
+	Cliente {atendimentos} to Atendimento {clientesAtendidos}
+    Cliente {consultoresVenda} to Consultor {clientesOportunidades}
+    Atendimento {oportunidadesVendas} to Oportunidade {atendimentosOportunidades}
+    Atendimento {etapasAtendimento} to EtapaAtendimento
+    Oportunidade {vendasOportunidades} to Venda {oportunidadeVenda}
+    Venda {produtosVenda1} to Produto {vendas1}
+    Produto {produtosVenda2} to ProdutoVenda
+    Venda {produtosVenda3} to ProdutoVenda {vendasProdutos}
+    Atendimento {propostas} to Proposta {propostaVenda}
+    Proposta {geraDocumento} to Documento {propostaDocumentos}
+    Cliente {avalia} to Avaliacao {clientesAvaliacoes}
+    
+}
+
+    

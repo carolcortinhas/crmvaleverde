@@ -1,0 +1,52 @@
+{
+  "name": "Avaliacao",
+  "fields": [
+    {
+      "fieldName": "nivelSatisfacao",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "avaliacaoProduto",
+      "otherEntityRelationshipName": "avaliacao",
+      "relationshipName": "avaliacaoProduto",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "avaliacaoAtendimento",
+      "otherEntityRelationshipName": "avaliacao",
+      "relationshipName": "avaliacaoAtendimento",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "avalia",
+      "relationshipName": "clientesAvaliacoes",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128135658",
+  "entityTableName": "avaliacao",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

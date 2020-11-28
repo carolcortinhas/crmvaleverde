@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="crmvaleverdeApp.etapaAtendimento.home.title">Etapa Atendimentos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-etapa-atendimento" [routerLink]="['/etapa-atendimento/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="crmvaleverdeApp.etapaAtendimento.home.createLabel">
+            Create a new Etapa Atendimento
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="etapaAtendimentos?.length === 0">
+        <span jhiTranslate="crmvaleverdeApp.etapaAtendimento.home.notFound">No etapaAtendimentos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="etapaAtendimentos && etapaAtendimentos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.etapaAtendimento.data">Data</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.etapaAtendimento.descricao">Descricao</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.etapaAtendimento.situacao">Situacao</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.etapaAtendimento.atendimento">Atendimento</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let etapaAtendimento of etapaAtendimentos ;trackBy: trackId">
+                    <td><a [routerLink]="['/etapa-atendimento', etapaAtendimento.id, 'view']">{{ etapaAtendimento.id }}</a></td>
+                    <td>{{ etapaAtendimento.data | date:'mediumDate' }}</td>
+                    <td>{{ etapaAtendimento.descricao }}</td>
+                    <td jhiTranslate="{{ 'crmvaleverdeApp.Situacao.' + etapaAtendimento.situacao }}">{{ etapaAtendimento.situacao }}</td>
+                    <td>
+                        <div *ngIf="etapaAtendimento.atendimento">
+                            <a [routerLink]="['/atendimento', etapaAtendimento.atendimento?.id, 'view']" >{{ etapaAtendimento.atendimento?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/etapa-atendimento', etapaAtendimento.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/etapa-atendimento', etapaAtendimento.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(etapaAtendimento)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

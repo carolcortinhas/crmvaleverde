@@ -1,0 +1,39 @@
+{
+  "name": "Proposta",
+  "fields": [
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "documento",
+      "otherEntityRelationshipName": "propostaDocumentos",
+      "relationshipName": "geraDocumento"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "atendimento",
+      "otherEntityRelationshipName": "propostas",
+      "relationshipName": "propostaVenda",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128140258",
+  "entityTableName": "proposta",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

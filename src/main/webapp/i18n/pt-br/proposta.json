@@ -1,0 +1,25 @@
+{
+  "crmvaleverdeApp": {
+    "proposta": {
+      "home": {
+        "title": "Propostas",
+        "createLabel": "Criar novo Proposta",
+        "createOrEditLabel": "Criar ou editar Proposta",
+        "notFound": "Nenhum Proposta encontrado"
+      },
+      "created": "Um novo Proposta foi criado com o identificador {{ param }}",
+      "updated": "Um Proposta foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Proposta foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Proposta {{ id }}?"
+      },
+      "detail": {
+        "title": "Proposta"
+      },
+      "numero": "Numero",
+      "data": "Data",
+      "geraDocumento": "Gera Documento",
+      "propostaVenda": "Proposta Venda"
+    }
+  }
+}

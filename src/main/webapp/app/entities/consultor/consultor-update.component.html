@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-consultor-heading" jhiTranslate="crmvaleverdeApp.consultor.home.createOrEditLabel">Create or edit a Consultor</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.consultor.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.consultor.cadastroFuncionario" for="field_cadastroFuncionario">Cadastro Funcionario</label>
+                    <select class="form-control" id="field_cadastroFuncionario" name="cadastroFuncionario" formControlName="cadastroFuncionario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="funcionarioOption.id === editForm.get('cadastroFuncionario')!.value?.id ? editForm.get('cadastroFuncionario')!.value : funcionarioOption" *ngFor="let funcionarioOption of funcionarios; trackBy: trackById">{{ funcionarioOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.consultor.clientesOportunidades" for="field_clientesOportunidades">Clientes Oportunidades</label>
+                    <select class="form-control" id="field_clientesOportunidades" name="clientesOportunidades" formControlName="clientesOportunidades">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clienteOption.id === editForm.get('clientesOportunidades')!.value?.id ? editForm.get('clientesOportunidades')!.value : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackById">{{ clienteOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "AvaliacaoAtendimento",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "avaliacao",
+      "otherEntityRelationshipName": "avaliacaoAtendimento",
+      "relationshipName": "avaliacao",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201128135758",
+  "entityTableName": "avaliacao_atendimento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

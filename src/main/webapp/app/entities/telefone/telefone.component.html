@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="crmvaleverdeApp.telefone.home.title">Telefones</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-telefone" [routerLink]="['/telefone/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="crmvaleverdeApp.telefone.home.createLabel">
+            Create a new Telefone
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="telefones?.length === 0">
+        <span jhiTranslate="crmvaleverdeApp.telefone.home.notFound">No telefones found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="telefones && telefones.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.telefone.codArea">Cod Area</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.telefone.numero">Numero</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.telefone.whatsApp">Whats App</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let telefone of telefones ;trackBy: trackId">
+                    <td><a [routerLink]="['/telefone', telefone.id, 'view']">{{ telefone.id }}</a></td>
+                    <td>{{ telefone.codArea }}</td>
+                    <td>{{ telefone.numero }}</td>
+                    <td>{{ telefone.whatsApp }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/telefone', telefone.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/telefone', telefone.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(telefone)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "Gerente",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "funcionario",
+      "otherEntityRelationshipName": "gerentes",
+      "relationshipName": "funcionario3",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128134758",
+  "entityTableName": "gerente",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

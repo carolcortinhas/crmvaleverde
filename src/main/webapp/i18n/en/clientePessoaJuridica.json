@@ -1,0 +1,24 @@
+{
+  "crmvaleverdeApp": {
+    "clientePessoaJuridica": {
+      "home": {
+        "title": "Cliente Pessoa Juridicas",
+        "createLabel": "Create a new Cliente Pessoa Juridica",
+        "createOrEditLabel": "Create or edit a Cliente Pessoa Juridica",
+        "notFound": "No Cliente Pessoa Juridicas found"
+      },
+      "created": "A new Cliente Pessoa Juridica is created with identifier {{ param }}",
+      "updated": "A Cliente Pessoa Juridica is updated with identifier {{ param }}",
+      "deleted": "A Cliente Pessoa Juridica is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Cliente Pessoa Juridica {{ id }}?"
+      },
+      "detail": {
+        "title": "Cliente Pessoa Juridica"
+      },
+      "cnpj": "Cnpj",
+      "razaoSocial": "Razao Social",
+      "clientePJ": "Cliente PJ"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "ClientePessoaJuridica",
+  "fields": [
+    {
+      "fieldName": "cnpj",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "razaoSocial",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "clientePessoaJuridica",
+      "relationshipName": "clientePJ",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201128135158",
+  "entityTableName": "cliente_pessoa_juridica",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,140 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pessoa-heading" jhiTranslate="crmvaleverdeApp.pessoa.home.createOrEditLabel">Create or edit a Pessoa</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                    <div *ngIf="editForm.get('nome')!.invalid && (editForm.get('nome')!.dirty || editForm.get('nome')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nome')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.sobrenome" for="field_sobrenome">Sobrenome</label>
+                    <input type="text" class="form-control" name="sobrenome" id="field_sobrenome"
+                           formControlName="sobrenome"/>
+                    <div *ngIf="editForm.get('sobrenome')!.invalid && (editForm.get('sobrenome')!.dirty || editForm.get('sobrenome')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('sobrenome')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                           formControlName="descricao"/>
+                    <div *ngIf="editForm.get('descricao')!.invalid && (editForm.get('descricao')!.dirty || editForm.get('descricao')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descricao')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.cpf" for="field_cpf">Cpf</label>
+                    <input type="text" class="form-control" name="cpf" id="field_cpf"
+                           formControlName="cpf"/>
+                    <div *ngIf="editForm.get('cpf')!.invalid && (editForm.get('cpf')!.dirty || editForm.get('cpf')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('cpf')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.rg" for="field_rg">Rg</label>
+                    <input type="text" class="form-control" name="rg" id="field_rg"
+                           formControlName="rg"/>
+                    <div *ngIf="editForm.get('rg')!.invalid && (editForm.get('rg')!.dirty || editForm.get('rg')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('rg')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.dataNascimento" for="field_dataNascimento">Data Nascimento</label>
+                    <div class="input-group">
+                        <input id="field_dataNascimento" type="text" class="form-control" name="dataNascimento" ngbDatepicker #dataNascimentoDp="ngbDatepicker" formControlName="dataNascimento"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataNascimentoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dataNascimento')!.invalid && (editForm.get('dataNascimento')!.dirty || editForm.get('dataNascimento')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dataNascimento')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.sexo" for="field_sexo">Sexo</label>
+                    <input type="text" class="form-control" name="sexo" id="field_sexo"
+                           formControlName="sexo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.contato" for="field_contato">Contato</label>
+                    <select class="form-control" id="field_contato" name="contato" formControlName="contato">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contatoOption.id === editForm.get('contato')!.value?.id ? editForm.get('contato')!.value : contatoOption" *ngFor="let contatoOption of contatoes; trackBy: trackById">{{ contatoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.endereco" for="field_endereco">Endereco</label>
+                    <select class="form-control" id="field_endereco" name="endereco" formControlName="endereco">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="enderecoOption.id === editForm.get('endereco')!.value?.id ? editForm.get('endereco')!.value : enderecoOption" *ngFor="let enderecoOption of enderecos; trackBy: trackById">{{ enderecoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.funcionario" for="field_funcionario">Funcionario</label>
+                    <select class="form-control" id="field_funcionario" name="funcionario" formControlName="funcionario">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="funcionarioOption.id === editForm.get('funcionario')!.value?.id ? editForm.get('funcionario')!.value : funcionarioOption" *ngFor="let funcionarioOption of funcionarios; trackBy: trackById">{{ funcionarioOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.pessoa.juridica" for="field_juridica">Juridica</label>
+                    <select class="form-control" id="field_juridica" name="juridica" formControlName="juridica">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientePessoaJuridicaOption.id === editForm.get('juridica')!.value?.id ? editForm.get('juridica')!.value : clientePessoaJuridicaOption" *ngFor="let clientePessoaJuridicaOption of juridicas; trackBy: trackById">{{ clientePessoaJuridicaOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

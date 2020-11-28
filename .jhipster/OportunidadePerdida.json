@@ -1,0 +1,33 @@
+{
+  "name": "OportunidadePerdida",
+  "fields": [
+    {
+      "fieldName": "descricaoPerda",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "oportunidade",
+      "otherEntityRelationshipName": "oportunidadePerdida",
+      "relationshipName": "vendaNaoEfetuada",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201128140558",
+  "entityTableName": "oportunidade_perdida",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

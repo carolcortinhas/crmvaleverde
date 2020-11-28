@@ -1,0 +1,29 @@
+{
+  "name": "Documento",
+  "fields": [
+    {
+      "fieldName": "nomeArquivo",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "proposta",
+      "otherEntityRelationshipName": "geraDocumento",
+      "relationshipName": "propostaDocumentos",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128140358",
+  "entityTableName": "documento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

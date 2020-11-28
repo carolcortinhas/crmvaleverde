@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-representante-pj-heading" jhiTranslate="crmvaleverdeApp.representantePJ.home.createOrEditLabel">Create or edit a Representante PJ</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.representantePJ.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.representantePJ.representa" for="field_representa">Representa</label>
+                    <select class="form-control" id="field_representa" name="representa" formControlName="representa">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientePessoaJuridicaOption.id === editForm.get('representa')!.value?.id ? editForm.get('representa')!.value : clientePessoaJuridicaOption" *ngFor="let clientePessoaJuridicaOption of representas; trackBy: trackById">{{ clientePessoaJuridicaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.representantePJ.pessoaJuridica" for="field_pessoaJuridica">Pessoa Juridica</label>
+                    <select class="form-control" id="field_pessoaJuridica" name="pessoaJuridica" formControlName="pessoaJuridica">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pessoaOption.id === editForm.get('pessoaJuridica')!.value?.id ? editForm.get('pessoaJuridica')!.value : pessoaOption" *ngFor="let pessoaOption of pessoajuridicas; trackBy: trackById">{{ pessoaOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

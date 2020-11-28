@@ -14,7 +14,49 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134158_added_entity_Pessoa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134258_added_entity_Contato.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134358_added_entity_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134458_added_entity_Email.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134558_added_entity_Administrador.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134658_added_entity_Consultor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134758_added_entity_Gerente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134858_added_entity_Funcionario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134958_added_entity_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135058_added_entity_ClientePessoaFisica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135158_added_entity_ClientePessoaJuridica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135258_added_entity_RepresentantePJ.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135358_added_entity_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135458_added_entity_Atendimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135558_added_entity_EtapaAtendimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135658_added_entity_Avaliacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135758_added_entity_AvaliacaoAtendimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135858_added_entity_AvaliacaoProduto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135958_added_entity_Venda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140058_added_entity_ProdutoVenda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140158_added_entity_Produto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140258_added_entity_Proposta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140358_added_entity_Documento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140458_added_entity_Oportunidade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140558_added_entity_OportunidadePerdida.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20201128134158_added_entity_constraints_Pessoa.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134258_added_entity_constraints_Contato.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134558_added_entity_constraints_Administrador.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134658_added_entity_constraints_Consultor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134758_added_entity_constraints_Gerente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128134958_added_entity_constraints_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135058_added_entity_constraints_ClientePessoaFisica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135258_added_entity_constraints_RepresentantePJ.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135458_added_entity_constraints_Atendimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135558_added_entity_constraints_EtapaAtendimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135658_added_entity_constraints_Avaliacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128135958_added_entity_constraints_Venda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140058_added_entity_constraints_ProdutoVenda.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140158_added_entity_constraints_Produto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140258_added_entity_constraints_Proposta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140358_added_entity_constraints_Documento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201128140458_added_entity_constraints_Oportunidade.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

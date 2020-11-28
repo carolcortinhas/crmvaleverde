@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-avaliacao-heading" jhiTranslate="crmvaleverdeApp.avaliacao.home.createOrEditLabel">Create or edit a Avaliacao</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.avaliacao.nivelSatisfacao" for="field_nivelSatisfacao">Nivel Satisfacao</label>
+                    <input type="text" class="form-control" name="nivelSatisfacao" id="field_nivelSatisfacao"
+                           formControlName="nivelSatisfacao"/>
+                    <div *ngIf="editForm.get('nivelSatisfacao')!.invalid && (editForm.get('nivelSatisfacao')!.dirty || editForm.get('nivelSatisfacao')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nivelSatisfacao')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.avaliacao.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                           formControlName="descricao"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.avaliacao.avaliacaoProduto" for="field_avaliacaoProduto">Avaliacao Produto</label>
+                    <select class="form-control" id="field_avaliacaoProduto" name="avaliacaoProduto" formControlName="avaliacaoProduto">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="avaliacaoProdutoOption.id === editForm.get('avaliacaoProduto')!.value?.id ? editForm.get('avaliacaoProduto')!.value : avaliacaoProdutoOption" *ngFor="let avaliacaoProdutoOption of avaliacaoprodutos; trackBy: trackById">{{ avaliacaoProdutoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.avaliacao.avaliacaoAtendimento" for="field_avaliacaoAtendimento">Avaliacao Atendimento</label>
+                    <select class="form-control" id="field_avaliacaoAtendimento" name="avaliacaoAtendimento" formControlName="avaliacaoAtendimento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="avaliacaoAtendimentoOption.id === editForm.get('avaliacaoAtendimento')!.value?.id ? editForm.get('avaliacaoAtendimento')!.value : avaliacaoAtendimentoOption" *ngFor="let avaliacaoAtendimentoOption of avaliacaoatendimentos; trackBy: trackById">{{ avaliacaoAtendimentoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crmvaleverdeApp.avaliacao.clientesAvaliacoes" for="field_clientesAvaliacoes">Clientes Avaliacoes</label>
+                    <select class="form-control" id="field_clientesAvaliacoes" name="clientesAvaliacoes" formControlName="clientesAvaliacoes">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clienteOption.id === editForm.get('clientesAvaliacoes')!.value?.id ? editForm.get('clientesAvaliacoes')!.value : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackById">{{ clienteOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

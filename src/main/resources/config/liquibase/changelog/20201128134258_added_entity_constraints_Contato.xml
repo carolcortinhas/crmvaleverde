@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Contato.
+    -->
+    <changeSet id="20201128134258-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="telefone_id"
+                                 baseTableName="contato"
+                                 constraintName="fk_contato_telefone_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="telefone"/>
+
+        <addForeignKeyConstraint baseColumnNames="email_id"
+                                 baseTableName="contato"
+                                 constraintName="fk_contato_email_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="email"/>
+
+        <addForeignKeyConstraint baseColumnNames="endereco_id"
+                                 baseTableName="contato"
+                                 constraintName="fk_contato_endereco_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="endereco"/>
+
+    </changeSet>
+</databaseChangeLog>

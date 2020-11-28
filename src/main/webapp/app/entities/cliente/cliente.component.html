@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="crmvaleverdeApp.cliente.home.title">Clientes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cliente" [routerLink]="['/cliente/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="crmvaleverdeApp.cliente.home.createLabel">
+            Create a new Cliente
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="clientes?.length === 0">
+        <span jhiTranslate="crmvaleverdeApp.cliente.home.notFound">No clientes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="clientes && clientes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.cliente.nivelSatisfacao">Nivel Satisfacao</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.cliente.origem">Origem</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.cliente.categoria">Categoria</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.cliente.clientePessoaJuridica">Cliente Pessoa Juridica</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.cliente.clientePessoaFisica">Cliente Pessoa Fisica</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.cliente.consultor">Consultor</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientes ;trackBy: trackId">
+                    <td><a [routerLink]="['/cliente', cliente.id, 'view']">{{ cliente.id }}</a></td>
+                    <td>{{ cliente.nivelSatisfacao }}</td>
+                    <td jhiTranslate="{{ 'crmvaleverdeApp.Origem.' + cliente.origem }}">{{ cliente.origem }}</td>
+                    <td jhiTranslate="{{ 'crmvaleverdeApp.Categoria.' + cliente.categoria }}">{{ cliente.categoria }}</td>
+                    <td>
+                        <div *ngIf="cliente.clientePessoaJuridica">
+                            <a [routerLink]="['/cliente-pessoa-juridica', cliente.clientePessoaJuridica?.id, 'view']" >{{ cliente.clientePessoaJuridica?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="cliente.clientePessoaFisica">
+                            <a [routerLink]="['/cliente-pessoa-fisica', cliente.clientePessoaFisica?.id, 'view']" >{{ cliente.clientePessoaFisica?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="cliente.consultor">
+                            <a [routerLink]="['/consultor', cliente.consultor?.id, 'view']" >{{ cliente.consultor?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/cliente', cliente.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/cliente', cliente.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(cliente)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

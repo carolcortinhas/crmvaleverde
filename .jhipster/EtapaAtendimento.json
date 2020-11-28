@@ -1,0 +1,38 @@
+{
+  "name": "EtapaAtendimento",
+  "fields": [
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "situacao",
+      "fieldType": "Situacao",
+      "fieldValues": "CONTATO,COTACAO,FOLLOWUP,VENDA,POSVENDA"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "atendimento",
+      "otherEntityRelationshipName": "etapasAtendimento",
+      "relationshipName": "atendimento",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128135558",
+  "entityTableName": "etapa_atendimento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

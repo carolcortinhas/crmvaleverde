@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cliente">
+            <h2><span jhiTranslate="crmvaleverdeApp.cliente.detail.title">Cliente</span> {{ cliente.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.cliente.nivelSatisfacao">Nivel Satisfacao</span></dt>
+                <dd>
+                    <span>{{ cliente.nivelSatisfacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.cliente.origem">Origem</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'crmvaleverdeApp.Origem.' + cliente.origem }}">{{ cliente.origem }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.cliente.categoria">Categoria</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'crmvaleverdeApp.Categoria.' + cliente.categoria }}">{{ cliente.categoria }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.cliente.clientePessoaJuridica">Cliente Pessoa Juridica</span></dt>
+                <dd>
+                    <div *ngIf="cliente.clientePessoaJuridica">
+                        <a [routerLink]="['/cliente-pessoa-juridica', cliente.clientePessoaJuridica?.id, 'view']">{{ cliente.clientePessoaJuridica?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.cliente.clientePessoaFisica">Cliente Pessoa Fisica</span></dt>
+                <dd>
+                    <div *ngIf="cliente.clientePessoaFisica">
+                        <a [routerLink]="['/cliente-pessoa-fisica', cliente.clientePessoaFisica?.id, 'view']">{{ cliente.clientePessoaFisica?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.cliente.consultor">Consultor</span></dt>
+                <dd>
+                    <div *ngIf="cliente.consultor">
+                        <a [routerLink]="['/consultor', cliente.consultor?.id, 'view']">{{ cliente.consultor?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cliente', cliente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

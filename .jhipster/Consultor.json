@@ -1,0 +1,48 @@
+{
+  "name": "Consultor",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "consultor",
+      "relationshipName": "atende"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "venda",
+      "otherEntityRelationshipName": "consultorVenda",
+      "relationshipName": "vendas"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "funcionario",
+      "otherEntityRelationshipName": "vendedores",
+      "relationshipName": "cadastroFuncionario",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "consultoresVenda",
+      "relationshipName": "clientesOportunidades",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201128134658",
+  "entityTableName": "consultor",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

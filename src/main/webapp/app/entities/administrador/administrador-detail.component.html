@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="administrador">
+            <h2><span jhiTranslate="crmvaleverdeApp.administrador.detail.title">Administrador</span> {{ administrador.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.administrador.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ administrador.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.administrador.funcionario1">Funcionario 1</span></dt>
+                <dd>
+                    <div *ngIf="administrador.funcionario1">
+                        <a [routerLink]="['/funcionario', administrador.funcionario1?.id, 'view']">{{ administrador.funcionario1?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/administrador', administrador.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

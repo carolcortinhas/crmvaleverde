@@ -1,0 +1,25 @@
+{
+  "crmvaleverdeApp": {
+    "etapaAtendimento": {
+      "home": {
+        "title": "Etapa Atendimentos",
+        "createLabel": "Create a new Etapa Atendimento",
+        "createOrEditLabel": "Create or edit a Etapa Atendimento",
+        "notFound": "No Etapa Atendimentos found"
+      },
+      "created": "A new Etapa Atendimento is created with identifier {{ param }}",
+      "updated": "A Etapa Atendimento is updated with identifier {{ param }}",
+      "deleted": "A Etapa Atendimento is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Etapa Atendimento {{ id }}?"
+      },
+      "detail": {
+        "title": "Etapa Atendimento"
+      },
+      "data": "Data",
+      "descricao": "Descricao",
+      "situacao": "Situacao",
+      "atendimento": "Atendimento"
+    }
+  }
+}

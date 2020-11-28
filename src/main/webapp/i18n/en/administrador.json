@@ -1,0 +1,23 @@
+{
+  "crmvaleverdeApp": {
+    "administrador": {
+      "home": {
+        "title": "Administradors",
+        "createLabel": "Create a new Administrador",
+        "createOrEditLabel": "Create or edit a Administrador",
+        "notFound": "No Administradors found"
+      },
+      "created": "A new Administrador is created with identifier {{ param }}",
+      "updated": "A Administrador is updated with identifier {{ param }}",
+      "deleted": "A Administrador is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Administrador {{ id }}?"
+      },
+      "detail": {
+        "title": "Administrador"
+      },
+      "nome": "Nome",
+      "funcionario1": "Funcionario 1"
+    }
+  }
+}

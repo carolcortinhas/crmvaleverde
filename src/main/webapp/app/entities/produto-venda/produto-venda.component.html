@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="crmvaleverdeApp.produtoVenda.home.title">Produto Vendas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-produto-venda" [routerLink]="['/produto-venda/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="crmvaleverdeApp.produtoVenda.home.createLabel">
+            Create a new Produto Venda
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="produtoVendas?.length === 0">
+        <span jhiTranslate="crmvaleverdeApp.produtoVenda.home.notFound">No produtoVendas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="produtoVendas && produtoVendas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.produtoVenda.quantidade">Quantidade</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.produtoVenda.produto">Produto</span></th>
+                    <th scope="col" ><span jhiTranslate="crmvaleverdeApp.produtoVenda.vendasProdutos">Vendas Produtos</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let produtoVenda of produtoVendas ;trackBy: trackId">
+                    <td><a [routerLink]="['/produto-venda', produtoVenda.id, 'view']">{{ produtoVenda.id }}</a></td>
+                    <td>{{ produtoVenda.quantidade }}</td>
+                    <td>
+                        <div *ngIf="produtoVenda.produto">
+                            <a [routerLink]="['/produto', produtoVenda.produto?.id, 'view']" >{{ produtoVenda.produto?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="produtoVenda.vendasProdutos">
+                            <a [routerLink]="['/venda', produtoVenda.vendasProdutos?.id, 'view']" >{{ produtoVenda.vendasProdutos?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/produto-venda', produtoVenda.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/produto-venda', produtoVenda.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(produtoVenda)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

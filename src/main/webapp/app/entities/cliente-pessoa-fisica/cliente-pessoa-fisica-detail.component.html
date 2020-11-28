@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="clientePessoaFisica">
+            <h2><span jhiTranslate="crmvaleverdeApp.clientePessoaFisica.detail.title">Cliente Pessoa Fisica</span> {{ clientePessoaFisica.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.clientePessoaFisica.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ clientePessoaFisica.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.clientePessoaFisica.pessoas">Pessoas</span></dt>
+                <dd>
+                    <div *ngIf="clientePessoaFisica.pessoas">
+                        <a [routerLink]="['/pessoa', clientePessoaFisica.pessoas?.id, 'view']">{{ clientePessoaFisica.pessoas?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cliente-pessoa-fisica', clientePessoaFisica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="clientePessoaJuridica">
+            <h2><span jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.detail.title">Cliente Pessoa Juridica</span> {{ clientePessoaJuridica.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.cnpj">Cnpj</span></dt>
+                <dd>
+                    <span>{{ clientePessoaJuridica.cnpj }}</span>
+                </dd>
+                <dt><span jhiTranslate="crmvaleverdeApp.clientePessoaJuridica.razaoSocial">Razao Social</span></dt>
+                <dd>
+                    <span>{{ clientePessoaJuridica.razaoSocial }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cliente-pessoa-juridica', clientePessoaJuridica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
